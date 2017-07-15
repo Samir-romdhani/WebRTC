@@ -1,64 +1,57 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <!--skip-->
-        <title>EasyRTC Demo:EasyRTC Demo: Video+Audio HD 720</title>
-        <link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
+        <title>Multiparty Chatroom</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
 
-        <!--hide-->
-        <link rel="stylesheet" type="text/css" href="css/landing.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo_audio_video_simple_hd.css" />
-
-        <!-- Prettify Code -->
-        <script type="text/javascript" src="js/prettify/prettify.js"></script>
-        <script type="text/javascript" src="js/prettify/loadAndFilter.js"></script>
-        <script type="text/javascript" src="js/prettify/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="js/prettify/prettify.css" />
-
-        <!--show-->            <!-- Assumes global locations for socket.io.js and easyrtc.js -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
         <script src="/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
-        <script type="text/javascript" src="js/demo_audio_video_simple_hd.js"></script>
-
+        <link rel="stylesheet" type="text/css" href="css/demo_room2.css" />
+        <script type="text/javascript" src="js/demo_multiparty2.js"></script>
     </head>
-    <body  onload="connect();">
-        <!--hide-->
 
-        <div id="container">
-            <div id="header">
-                <!-- <a href="index.html"><img id="logo_easyrtc" src="images/easyrtc_logo.png" alt="EasyRTC" style="" /></a> -->
+    <body onload="appInit()">
+        <div id="fullpage"  class="boxCommon" style="background-image:url(images/irongrip.png)">
+            <table  border="1" width="80%">
+                <tr>
+                    <video width="20%" id="box0" class="transit boxCommon thumbCommon easyrtcMirror" muted="muted" volume="0" ></video>
+                    <video width="20%" id="box1" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box2" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box3" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box4" class="transit boxCommon thumbCommon" ></video>
+                </tr>
+                <tr>
+
+                    <video width="20%" id="box5" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box6" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box7" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box8" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box9" class="transit boxCommon thumbCommon" ></video>
+                </tr>
+                <tr>
+                    <video width="20%" id="box10" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box11" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box12" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box13" class="transit boxCommon thumbCommon" ></video>
+                    <video width="20%" id="box14" class="transit boxCommon thumbCommon" ></video>
+                </tr>
+
+
+
+            </table>
+            <!--
+            <div id="textentryBox" onsubmit="sendText()" style="display:none" >
+                <input type="text" id="textentryField"  class="transit boxcommon" /><br>
+                <button id="textentrySubmit" style="float:right;margin-right:1em" onclick="sendText()">Send</button>
+                <button id="textentryCancel" style="float:left;margin-left:1em" onclick="cancelText()">Cancel</button>
             </div>
-            <div id="main">
-                <!-- Main Content -->
-                <!--show-->
-                <h1 class="center">nodejs-webrtc-video-stream</h1>
-                <p class="center">Quality HD 720P</p>
-                <hr>
 
-                <div id="demoContainer">
-                   <div id="connectControls">
-                        <div id="iam">Not yet connected...</div>
-                        <br />
-                        <strong>Connected users:</strong>
-                        <div id="otherClients"></div>
-                    </div>
-                    <div id="videos">
-
-                        <div style="position:relative;float:left;" width="1282" height="722">
-                            <video autoplay="autoplay" id="callerVideo"></video>
-                            <video  class="easyrtcMirror" autoplay="autoplay" id="selfVideo" muted="true" volume="0" ></video>
-                        </div>
-                        <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
-                    </div>
-                </div>
-                <!--hide-->
-                <br style="clear:both;" />
-                <hr />
-
-
-                <!-- End Main Content -->
-            </div>
+            <img id="killButton" class="transit boxCommon" onclick="killActiveBox()" src="images/button_close.png" style="display:none;z-index:3" alt="close button" />
+            <img id="muteButton" class="transit boxCommon" onclick ="muteActiveBox()" src="images/button_mute.png" style="display:none;z-index:3" alt="mute button" />
+            <img id="textEntryButton" class="transit boxCommon" onclick ="showTextEntry()" src="images/textEntry.png" style="z-index:3;display:none" alt="text button" />
+            -->
         </div>
-        <!--show-->
     </body>
 </html>
