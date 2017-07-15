@@ -11,12 +11,12 @@ Simple working example of nodejs webrtc video streaming using EasyRTC open sourc
 
 ##Live Demo
 
-[Demo](https://mysterious-mesa-29296.herokuapp.com/)
+[Demo](https://webrtcapps.herokuapp.com/)
 
 ##Local Installation
 
 ```
-git clone https://github.com/renanpupin/nodejs-webrtc-video-stream
+git clone https://github.com/Samir-romdhani/WebRTC
 npm install
 node server.js
 ```
